@@ -404,6 +404,40 @@ h1, h2, h3, h4, h5, h6 {
 #carouselExampleAutoplaying img {
   object-fit: cover;
 }
+/* Posicionamiento sutil de las flechas del carrusel hero */
+.hero-promo-section .carousel-control-prev {
+  left: -20px;
+  width: 5%;
+}
+
+.hero-promo-section .carousel-control-next {
+  right: -20px;
+  width: 5%;
+}
+
+/* Opcional: Asegura que el alto de las imágenes de los productos sea parejo en el carrusel */
+.hero-producto-img {
+  max-height: 320px;
+  width: 100%;
+  object-fit: contain;
+}
+/* Estado normal: Borde morado claro */
+.btn-outline-morado-claro {
+  color: var(--texto-oscuro);
+  background-color: transparent;
+  border: 2px solid var(--morado-borde); /* Morado claro por defecto (#e2d5f3) */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Al pasar el cursor (:hover): El borde cambia a morado/magenta */
+.btn-outline-morado-claro:hover {
+  border-color: var(--morado) !important; /* Cambio de borde a magenta/morado al pasar el cursor */
+  color: var(--morado);
+  background-color: var(--morado-claro); /* Fondo sutil morado claro */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(209, 43, 132, 0.15); /* Sombra magenta suave opcional */
+}
 
 /* ---------- Beneficios ---------- */
 .card.border-0.shadow-sm {
@@ -426,6 +460,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .card.border-0.shadow-sm:hover {
   transform: translateY(-3px);
+}
+
+.card-beneficio {
+  border: 2px solid transparent !important; /* Invisible al inicio para que no salte el diseño */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Al pasar el cursor: el borde cambia a morado/magenta y se eleva un poco */
+.card-beneficio:hover {
+  border-color: var(--morado) !important; /* Usa tu color magenta de la marca */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(209, 43, 132, 0.15) !important; /* Sombra suave acorde al tema */
 }
 
 /* ---------- Preguntas frecuentes ---------- */
@@ -456,6 +503,13 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   font-size: 1rem;
 }
+.faq-sportzone {
+  border: 2px solid var(--morado);
+  border-radius: 1rem;
+  background: linear-gradient(135deg, rgba(91, 30, 109, 0.05) 0%, rgba(211, 51, 132, 0.03) 100%);
+  box-shadow: 0 0.5rem 1rem rgba(91, 30, 109, 0.12);
+  padding: 2rem;
+}
 
 /* ---------- Formulario de contacto ---------- */
 .form-label,
@@ -484,6 +538,50 @@ label[for="floatingInput"] {
   border-color: var(--magenta);
   box-shadow: 0 0 0 3px rgba(211, 51, 132, 0.18);
 }
+.formulario-sportzone {
+  border: 2px solid var(--morado);
+  border-radius: 1rem;
+  /* Degradado sutil de morado claro a blanco o entre dos tonos claros de morado */
+  background: linear-gradient(135deg, rgba(91, 30, 109, 0.05) 0%, rgba(211, 51, 132, 0.03) 100%);
+  box-shadow: 0 0.5rem 1rem rgba(91, 30, 109, 0.12);
+  padding: 2rem;
+}
+
+/* Cuando el cursor pasa por encima de la casilla */
+.form-check-input:hover {
+  border-color: var(--morado);
+  background-color: rgba(91, 30, 109, 0.1); /* Efecto morado claro translúcido */
+  cursor: pointer;
+}
+
+/* Cuando la casilla está seleccionada (marcada) */
+.form-check-input:checked {
+  background-color: var(--morado); 
+  border-color: var(--morado);
+}
+
+/* Opcional: cuando está seleccionada y vuelves a pasar el cursor por encima */
+.form-check-input:checked:hover {
+  background-color: #431350; /* Un tono un poco más profundo */
+  border-color: #431350;
+}
+/* 1. Cambiar el borde y enfoque de los selectores a morado */
+.form-select:focus,
+.form-select:valid,
+.form-select.is-valid {
+  border-color: var(--morado) !important;
+  box-shadow: 0 0 0 3px rgba(91, 30, 109, 0.15) !important;
+}
+
+/* 2. Color de fondo morado claro al pasar el cursor sobre las opciones del desplegable */
+.form-select option:hover,
+.form-select option:focus,
+.form-select option:checked {
+  background-color: rgba(91, 30, 109, 0.15) !important;
+  color: var(--morado);
+}
+
+
 
 form:not(:placeholder-shown) .form-control:user-invalid {
   border-color: var(--magenta);
@@ -496,6 +594,48 @@ form:not(:placeholder-shown) .form-control:user-valid {
 
 textarea.form-control {
   min-height: 110px;
+}
+
+/* Condiciones */
+/* Variables de color de la marca */
+:root {
+  --morado-claro: #f4effa;    /* Fondo suave para tarjetas y efectos */
+  --morado-borde: #e2d5f3;    /* Borde sutil suave */
+  --magenta: #d12b84;         /* Color principal para iconos, detalles y sombras */
+  --texto-oscuro: #2b1c38;     /* Título de tarjetas */
+}
+
+/* Título principal de la sección */
+.titulo-condiciones {
+  color: var(--texto-oscuro);
+  font-size: 2rem;
+}
+
+/* Estilo base para las tarjetas de condiciones */
+.card-condicion {
+  background-color: #ffffff;
+  border: 1px solid var(--morado-borde) !important;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto hover elegante en tonos magenta */
+.card-condicion:hover {
+  transform: translateY(-4px);
+  border-color: var(--magenta) !important;
+  box-shadow: 0 8px 24px rgba(209, 43, 132, 0.12);
+  background-color: var(--morado-claro);
+}
+
+/* Estilo y color magenta para los iconos */
+.icono-condicion {
+  font-size: 1.4rem;
+  color: var(--magenta);
+}
+
+/* Color del título interno de cada tarjeta */
+.card-condicion .card-title {
+  color: var(--texto-oscuro);
 }
 
 footer {
